@@ -9,6 +9,7 @@
 
     // Thanks to http://www.squidoo.com/load-jQuery-dynamically
     function load() {
+
         // load CSS for fancybox
         var link  = d.createElement("link");
         link.rel  = "stylesheet";
@@ -173,7 +174,7 @@
 
                 if (!currentRow.ignore) {
                     csv += currentRow.date.replace("/", "-") + ";;;;" + currentRow.description +
-                        ";" + currentRow.value.replace(/[^\-0-9.]/g, "") + ";";
+                        ";" + currentRow.value.replace(/[^\-0-9.]/g, "") + ";\n";
                 }
 
             }
