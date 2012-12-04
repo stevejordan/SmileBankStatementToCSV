@@ -174,7 +174,7 @@
 
                 if (!currentRow.ignore) {
                     csv += currentRow.date.replace("/", "-") + ";;;;" + currentRow.description +
-                        ";" + currentRow.value.replace(/[^\-0-9.]/g, "") + ";\n";
+                        ";" + currentRow.value.replace(/[^\-0-9.]/g, "") + ";<br />";
                 }
 
             }
