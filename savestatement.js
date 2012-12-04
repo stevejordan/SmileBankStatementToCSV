@@ -3,10 +3,9 @@
     "use strict";
 
     // Init variables
-    var
-      csv = "",
-      entries = [],
-      head  = d.getElementsByTagName("head")[0];
+    var csv = "",
+        entries = [],
+        head  = d.getElementsByTagName("head")[0];
 
     // Thanks to http://www.squidoo.com/load-jQuery-dynamically
     function load() {
@@ -142,6 +141,7 @@
                         // Check if there's a "paid out" or negative entry
                         value = $(this).html().trim();
                         value = value.replace("&nbsp;", "");
+
                         if (value !== "") {
                             value = "-" + value;
                             // console.log("Value: " + value);
@@ -170,10 +170,10 @@
             for (i = 0; i < entries.length; i++) {
 
                 currentRow = entries[i];
+
                 if (!currentRow.ignore) {
-                    csv +=
-                        currentRow.date + "," + currentRow.value.replace("£", "") +
-                        ",\"" + currentRow.description + "\"<br />";
+                    csv += currentRow.date.replace("/", "-") + ";;;;" + currentRow.description +
+                        ";" + currentRow.value.replace(/[^\-0-9.]/g, "") + ";";
                 }
 
             }
